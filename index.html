@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdiwahab Salim| Creative Multimedia Professional</title>
+    <meta name="description"
+        content="Portfolio of Abdiwahab Salisaid - Graphic Designer, Video Editor, Digital Marketer, and Camera Operator.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        surface: '#111111',
+                        surfaceLighter: '#1a1a1a',
+                        gold: '#FFD700',
+                        goldHover: '#e6c200',
+                        goldGlow: 'rgba(255, 215, 0, 0.3)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon': '0 0 15px rgba(255, 215, 0, 0.5)',
+                        'neon-hover': '0 0 25px rgba(255, 215, 0, 0.8)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Particles.js & Typed.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+</head>
+
+<body class="bg-dark text-gray-300 font-sans antialiased overflow-x-hidden selection:bg-gold selection:text-dark">
+
+    <!-- Floating Social Media Sidebar -->
+    <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-40 hidden lg:flex flex-col space-y-4 p-4">
+        <a href="https://www.instagram.com/barwaani_2" target="_blank"
+            class="w-10 h-10 rounded-full bg-surface border border-surfaceLighter flex items-center justify-center text-gray-400 hover:text-dark hover:bg-gold hover:border-gold transition-all duration-300 shadow-lg hover:-translate-y-1 hover:shadow-neon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/share/18mA49bjRs/" target="_blank"
+            class="w-10 h-10 rounded-full bg-surface border border-surfaceLighter flex items-center justify-center text-gray-400 hover:text-dark hover:bg-gold hover:border-gold transition-all duration-300 shadow-lg hover:-translate-y-1 hover:shadow-neon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.snapchat.com/add/barwaani2" target="_blank"
+            class="w-10 h-10 rounded-full bg-surface border border-surfaceLighter flex items-center justify-center text-gray-400 hover:text-dark hover:bg-gold hover:border-gold transition-all duration-300 shadow-lg hover:-translate-y-1 hover:shadow-neon">
+            <i class="fab fa-snapchat-ghost"></i>
+        </a>
+    </div>
+
+    <!-- Sticky Floating Contact Button -->
+    <a href="https://wa.me/252615578598" target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-8 right-8 z-40 flex items-center justify-center w-12 h-12 bg-surface/80 backdrop-blur-md border border-gold/50 text-gold rounded-full shadow-neon hover:bg-gold hover:text-dark transition-all duration-300 group"
+        title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+    </a>
+
+    <!-- Loading Screen -->
+    <div id="loader"
+        class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-dark transition-opacity duration-500">
+        <div class="w-16 h-16 border-4 border-surfaceLighter border-t-gold rounded-full animate-spin mb-4"></div>
+        <div class="font-heading text-gold text-xl tracking-widest uppercase">Loading</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div
+        class="cursor-dot hidden md:block z-[100] fixed top-0 left-0 w-2 h-2 bg-gold rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 mix-blend-difference">
+    </div>
+    <div
+        class="cursor-outline hidden md:block z-[99] fixed top-0 left-0 w-8 h-8 border-2 border-gold rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out">
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar"
+        class="fixed w-full z-40 transition-all duration-300 py-6 px-6 md:px-12 backdrop-blur-sm bg-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#home" class="font-heading text-2xl font-bold text-white tracking-wider nav-logo">
+                ABDI<span class="text-gold">WAHAB</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex space-x-8 font-medium text-sm tracking-wide">
+                <li><a href="#home" class="nav-link text-white hover:text-gold transition-colors relative">Home</a></li>
+                <li><a href="#about" class="nav-link text-white hover:text-gold transition-colors relative">About</a>
+                </li>
+                <li><a href="#services"
+                        class="nav-link text-white hover:text-gold transition-colors relative">Services</a></li>
+                <li><a href="#skills" class="nav-link text-white hover:text-gold transition-colors relative">Skills</a>
+                </li>
+                <li><a href="#resume" class="nav-link text-white hover:text-gold transition-colors relative">Resume</a>
+                </li>
+                <li><a href="#portfolio"
+                        class="nav-link text-white hover:text-gold transition-colors relative">Portfolio</a></li>
+                <li><a href="#testimonials"
+                        class="nav-link text-white hover:text-gold transition-colors relative">Testimonials</a></li>
+                <li><a href="#contact"
+                        class="nav-link text-white hover:text-gold transition-colors relative">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-white focus:outline-none z-50">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-dark/95 backdrop-blur-md z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
+            <ul class="flex flex-col space-y-6 text-center text-xl font-heading">
+                <li><a href="#home" class="mobile-nav-link text-white hover:text-gold">Home</a></li>
+                <li><a href="#about" class="mobile-nav-link text-white hover:text-gold">About</a></li>
+                <li><a href="#services" class="mobile-nav-link text-white hover:text-gold">Services</a></li>
+                <li><a href="#skills" class="mobile-nav-link text-white hover:text-gold">Skills</a></li>
+                <li><a href="#resume" class="mobile-nav-link text-white hover:text-gold">Resume</a></li>
+                <li><a href="#portfolio" class="mobile-nav-link text-white hover:text-gold">Portfolio</a></li>
+                <li><a href="#testimonials" class="mobile-nav-link text-white hover:text-gold">Testimonials</a></li>
+                <li><a href="#contact" class="mobile-nav-link text-white hover:text-gold">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div id="particles-js" class="absolute inset-0 z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-dark z-0 pointer-events-none"></div>
+
+        <div
+            class="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="order-2 lg:order-1 hero-content">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-surfaceLighter border border-gold/20 text-gold text-sm font-medium tracking-widest mb-6 uppercase">Hello!</span>
+                <h1 class="font-heading text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
+                    I'm <span class="text-gold glow-text">Abdiwahab</span><br> Salim
+                </h1>
+                <h2 class="text-xl md:text-2xl font-medium text-gray-300 mb-6 h-8">
+                    <span id="typed-text" class="text-white"></span>
+                </h2>
+                <p class="text-gray-400 mb-10 max-w-lg leading-relaxed text-lg">
+                    Creative multimedia professional specializing in graphic design, cinematic video editing, digital
+                    marketing, and professional camera operating. Helping brands grow with modern visual storytelling.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="btn-primary">Hire Me</a>
+                    <a href="#portfolio" class="btn-secondary">View My Work</a>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 flex justify-center lg:justify-end relative hero-image-container">
+                <div
+                    class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-surfaceLighter shadow-neon floating-anim z-10">
+                    <img src="../WhatsApp%20Image%202026-05-16%20at%204.19.25%20AM.jpeg" alt="Abdiwahab Salim"
+                        class="w-full h-full object-cover object-center transform transition-transform hover:scale-105 duration-500">
+                </div>
+                <!-- Abstract glowing shape -->
+                <div
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gold/10 rounded-full blur-3xl z-0 pointer-events-none">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-24 bg-surface section-padding overflow-hidden">
+        <div
+            class="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
+            <h2
+                class="text-[15vw] font-heading font-black text-white/[0.02] tracking-tighter uppercase whitespace-nowrap">
+                About</h2>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center mb-16 section-heading">
+                <span class="text-gold font-medium tracking-widest uppercase text-sm">Discover</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-2">About Me</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative about-image">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl relative z-10 group">
+                        <img src="../WhatsApp%20Image%202026-05-16%20at%204.19.25%20AM.jpeg" alt="About Abdiwahab"
+                            class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                    </div>
+                    <!-- Decorative border -->
+                    <div
+                        class="absolute -bottom-6 -right-6 w-full h-full border-2 border-gold rounded-2xl z-0 hidden md:block transition-transform duration-500 hover:translate-x-2 hover:translate-y-2">
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <p class="text-lg text-gray-300 leading-relaxed mb-8">
+                        I am a passionate creative professional with experience in graphic design, video editing,
+                        digital marketing, and camera operating. I create engaging visual content that helps businesses
+                        and creators build strong online identities.
+                    </p>
+
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-gray-400">
+                        <li class="flex items-center"><span class="text-gold mr-2"><i
+                                    class="fas fa-chevron-right text-xs"></i></span> <strong
+                                class="text-white mr-2">Name:</strong> Abdiwahab Salim</li>
+                        <li class="flex items-center"><span class="text-gold mr-2"><i
+                                    class="fas fa-chevron-right text-xs"></i></span> <strong
+                                class="text-white mr-2">Email:</strong> <a href="mailto:abdiwahabsalim@gmail.com"
+                                class="hover:text-gold transition-colors">abdiwahabsalim@gmail.com</a></li>
+                        <li class="flex items-center"><span class="text-gold mr-2"><i
+                                    class="fas fa-chevron-right text-xs"></i></span> <strong
+                                class="text-white mr-2">Phone:</strong> 618455022</li>
+                        <li class="flex items-center"><span class="text-gold mr-2"><i
+                                    class="fas fa-chevron-right text-xs"></i></span> <strong
+                                class="text-white mr-2">Profession:</strong> Designer & Editor</li>
+                        <li class="flex items-center"><span class="text-gold mr-2"><i
+                                    class="fas fa-chevron-right text-xs"></i></span> <strong
+                                class="text-white mr-2">Languages:</strong> English, Somali</li>
+                        <li class="flex items-center"><span class="text-gold mr-2"><i
+                                    class="fas fa-chevron-right text-xs"></i></span> <strong
+                                class="text-white mr-2">Availability:</strong> Freelance & Full-Time</li>
+                    </ul>
+
+                    <div class="grid grid-cols-3 gap-6 mb-10 border-t border-surfaceLighter pt-8">
+                        <div class="text-center">
+                            <h3 class="text-4xl font-heading font-bold text-gold counter" data-target="100">0</h3>
+                            <p class="text-sm text-gray-400 mt-2 uppercase tracking-wider">+ Projects</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-4xl font-heading font-bold text-gold counter" data-target="50">0</h3>
+                            <p class="text-sm text-gray-400 mt-2 uppercase tracking-wider">+ Clients</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-4xl font-heading font-bold text-gold counter" data-target="3">0</h3>
+                            <p class="text-sm text-gray-400 mt-2 uppercase tracking-wider">+ Years Exp.</p>
+                        </div>
+                    </div>
+
+                    <a href="../Abdiwahab%20Salim%20Said%20CV.pdf" target="_blank"
+                        class="btn-primary inline-flex items-center">
+                        <i class="fas fa-download mr-2"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 section-heading">
+                <span class="text-gold font-medium tracking-widest uppercase text-sm">What I Do</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-2">My Services</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="service-card group bg-surface rounded-2xl p-8 border border-surfaceLighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 rounded-xl bg-dark border border-surfaceLighter flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 group-hover:shadow-neon transition-all duration-300">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-4">Graphic Design</h3>
+                        <p class="text-gray-400 text-sm mb-4">Professional and eye-catching visual designs tailored to
+                            communicate your brand's message effectively.</p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li><i class="fas fa-check text-gold mr-2"></i> Custom Logo & Branding</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Marketing Materials</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Social Media Graphics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="service-card group bg-surface rounded-2xl p-8 border border-surfaceLighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 rounded-xl bg-dark border border-surfaceLighter flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 group-hover:shadow-neon transition-all duration-300">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-4">Video Editing</h3>
+                        <p class="text-gray-400 text-sm mb-4">High-quality, cinematic video editing that brings your raw
+                            footage to life and captivates your audience.</p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li><i class="fas fa-check text-gold mr-2"></i> YouTube & Social Reels</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Commercials & Promos</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Color Grading & Effects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="service-card group bg-surface rounded-2xl p-8 border border-surfaceLighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 rounded-xl bg-dark border border-surfaceLighter flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 group-hover:shadow-neon transition-all duration-300">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-4">Digital Marketing</h3>
+                        <p class="text-gray-400 text-sm mb-4">Data-driven marketing strategies to increase your online
+                            presence, traffic, and overall brand engagement.</p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li><i class="fas fa-check text-gold mr-2"></i> Social Media Ads</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Brand Growth Strategy</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Audience Engagement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div
+                    class="service-card group bg-surface rounded-2xl p-8 border border-surfaceLighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 rounded-xl bg-dark border border-surfaceLighter flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 group-hover:shadow-neon transition-all duration-300">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-4">Camera Operating</h3>
+                        <p class="text-gray-400 text-sm mb-4">Expert camera operation to capture stunning visuals for
+                            your events, documentaries, or creative productions.</p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li><i class="fas fa-check text-gold mr-2"></i> Event Videography</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Cinematic B-Roll</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Professional Lighting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div
+                    class="service-card group bg-surface rounded-2xl p-8 border border-surfaceLighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 rounded-xl bg-dark border border-surfaceLighter flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 group-hover:shadow-neon transition-all duration-300">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-4">Social Content</h3>
+                        <p class="text-gray-400 text-sm mb-4">Engaging, trend-driven content tailored for modern social
+                            media platforms to maximize your reach.</p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li><i class="fas fa-check text-gold mr-2"></i> TikToks & Reels</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> High-Quality Posts</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Trend Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div
+                    class="service-card group bg-surface rounded-2xl p-8 border border-surfaceLighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 rounded-xl bg-dark border border-surfaceLighter flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 group-hover:shadow-neon transition-all duration-300">
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-4">Branding & Identity</h3>
+                        <p class="text-gray-400 text-sm mb-4">Building strong, memorable visual identities that set your
+                            business apart from competitors.</p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li><i class="fas fa-check text-gold mr-2"></i> Brand Guidelines</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Visual Identity Systems</li>
+                            <li><i class="fas fa-check text-gold mr-2"></i> Brand Storytelling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-surface relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 section-heading">
+                <span class="text-gold font-medium tracking-widest uppercase text-sm">Expertise</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-2">My Skills</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-heading font-bold text-white mb-6">Core Skills</h3>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Graphic Design</span>
+                            <span class="text-gold">95%</span>
+                        </div>
+                        <div class="h-2 w-full bg-dark rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-gold/60 to-gold rounded-full"
+                                data-width="95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Video Editing</span>
+                            <span class="text-gold">92%</span>
+                        </div>
+                        <div class="h-2 w-full bg-dark rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-gold/60 to-gold rounded-full"
+                                data-width="92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Digital Marketing</span>
+                            <span class="text-gold">88%</span>
+                        </div>
+                        <div class="h-2 w-full bg-dark rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-gold/60 to-gold rounded-full"
+                                data-width="88%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Camera Operating</span>
+                            <span class="text-gold">90%</span>
+                        </div>
+                        <div class="h-2 w-full bg-dark rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-gold/60 to-gold rounded-full"
+                                data-width="90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-heading font-bold text-white mb-6">Software & Tools</h3>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Adobe Photoshop</span>
+                            <span class="text-gold">95%</span>
+                        </div>
+                        <div class="h-2 w-full bg-dark rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-gold/60 to-gold rounded-full"
+                                data-width="95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Adobe Premiere Pro</span>
+                            <span class="text-gold">93%</span>
+                        </div>
+                        <div class="h-2 w-full bg-dark rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-gold/60 to-gold rounded-full"
+                                data-width="93%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Adobe After Effects</span>
+                            <span class="text-gold">85%</span>
+                        </div>
+                        <div class="h-2 w-full bg-dark rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-gold/60 to-gold rounded-full"
+                                data-width="85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-white">Branding Design</span>
+                            <span class="text-gold">91%</span>
+                        </div>
+                        <div class="h-2 w-full bg-dark rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-gold/60 to-gold rounded-full"
+                                data-width="91%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-24 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 section-heading">
+                <span class="text-gold font-medium tracking-widest uppercase text-sm">Experience</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-2">Resume</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Experience -->
+                <div>
+                    <h3 class="text-2xl font-heading font-bold text-white mb-8 flex items-center">
+                        <i class="fas fa-briefcase text-gold mr-3"></i> Professional Experience
+                    </h3>
+
+                    <div class="relative border-l-2 border-surfaceLighter pl-8 space-y-10 timeline-container">
+
+                        <div class="relative timeline-item">
+                            <div
+                                class="absolute -left-[41px] w-5 h-5 bg-dark border-2 border-gold rounded-full timeline-dot shadow-neon">
+                            </div>
+                            <span
+                                class="inline-block py-1 px-3 bg-surface border border-surfaceLighter rounded-full text-gold text-xs font-bold tracking-wider mb-2">Present</span>
+                            <h4 class="text-xl font-bold text-white mb-1">Freelance Graphic Designer</h4>
+                            <p class="text-gray-400 text-sm">Working with diverse clients to create striking brand
+                                identities, marketing materials, and digital assets.</p>
+                        </div>
+
+                        <div class="relative timeline-item">
+                            <div
+                                class="absolute -left-[41px] w-5 h-5 bg-dark border-2 border-gold rounded-full timeline-dot">
+                            </div>
+                            <span
+                                class="inline-block py-1 px-3 bg-surface border border-surfaceLighter rounded-full text-gold text-xs font-bold tracking-wider mb-2">2023
+                                - Present</span>
+                            <h4 class="text-xl font-bold text-white mb-1">Professional Video Editor</h4>
+                            <p class="text-gray-400 text-sm">Editing high-quality cinematic content for YouTube,
+                                promotional campaigns, and social media reels.</p>
+                        </div>
+
+                        <div class="relative timeline-item">
+                            <div
+                                class="absolute -left-[41px] w-5 h-5 bg-dark border-2 border-gold rounded-full timeline-dot">
+                            </div>
+                            <span
+                                class="inline-block py-1 px-3 bg-surface border border-surfaceLighter rounded-full text-gold text-xs font-bold tracking-wider mb-2">2022
+                                - 2024</span>
+                            <h4 class="text-xl font-bold text-white mb-1">Digital Marketing Specialist</h4>
+                            <p class="text-gray-400 text-sm">Developing and executing successful digital marketing
+                                campaigns, driving brand awareness and engagement.</p>
+                        </div>
+
+                        <div class="relative timeline-item">
+                            <div
+                                class="absolute -left-[41px] w-5 h-5 bg-dark border-2 border-gold rounded-full timeline-dot">
+                            </div>
+                            <span
+                                class="inline-block py-1 px-3 bg-surface border border-surfaceLighter rounded-full text-gold text-xs font-bold tracking-wider mb-2">2021
+                                - 2023</span>
+                            <h4 class="text-xl font-bold text-white mb-1">Camera Operator</h4>
+                            <p class="text-gray-400 text-sm">Capturing high-quality video footage for events,
+                                interviews, and commercial productions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-heading font-bold text-white mb-8 flex items-center">
+                        <i class="fas fa-graduation-cap text-gold mr-3"></i> Education
+                    </h3>
+
+                    <div class="relative border-l-2 border-surfaceLighter pl-8 space-y-10 timeline-container">
+
+                        <div class="relative timeline-item">
+                            <div
+                                class="absolute -left-[41px] w-5 h-5 bg-dark border-2 border-gold rounded-full timeline-dot shadow-neon">
+                            </div>
+                            <span
+                                class="inline-block py-1 px-3 bg-surface border border-surfaceLighter rounded-full text-gold text-xs font-bold tracking-wider mb-2">Graduated</span>
+                            <h4 class="text-xl font-bold text-white mb-1">Multimedia & Creative Design</h4>
+                            <h5 class="text-gray-300 font-medium mb-2">Jamhuriya University of Science & Technology</h5>
+                            <p class="text-gray-400 text-sm">Comprehensive study of visual arts, digital media
+                                production, graphic design principles, and cinematic techniques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-surface relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 section-heading">
+                <span class="text-gold font-medium tracking-widest uppercase text-sm">My Work</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-2">Portfolio</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button
+                    class="filter-btn active px-6 py-2 rounded-full border border-gold text-gold bg-gold/10 hover:bg-gold hover:text-dark transition-all duration-300"
+                    data-filter="all">All</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border border-surfaceLighter text-gray-400 hover:border-gold hover:text-gold transition-all duration-300"
+                    data-filter="design">Design</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border border-surfaceLighter text-gray-400 hover:border-gold hover:text-gold transition-all duration-300"
+                    data-filter="video">Video</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border border-surfaceLighter text-gray-400 hover:border-gold hover:text-gold transition-all duration-300"
+                    data-filter="marketing">Marketing</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 portfolio-grid">
+
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden cursor-pointer"
+                    data-category="design">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Luxury Identity"
+                        class="w-full h-80 object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center backdrop-blur-sm">
+                        <span
+                            class="text-gold text-sm font-bold tracking-wider mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Design</span>
+                        <h3
+                            class="text-2xl font-heading font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Luxury Identity</h3>
+                        <div
+                            class="mt-4 w-12 h-12 rounded-full bg-gold text-dark flex items-center justify-center transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden cursor-pointer"
+                    data-category="video">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Cinematic Commercial"
+                        class="w-full h-80 object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center backdrop-blur-sm">
+                        <span
+                            class="text-gold text-sm font-bold tracking-wider mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Video</span>
+                        <h3
+                            class="text-2xl font-heading font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Cinematic Commercial</h3>
+                        <div
+                            class="mt-4 w-12 h-12 rounded-full bg-gold text-dark flex items-center justify-center transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden cursor-pointer"
+                    data-category="design">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Instagram Campaign"
+                        class="w-full h-80 object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center backdrop-blur-sm">
+                        <span
+                            class="text-gold text-sm font-bold tracking-wider mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Design</span>
+                        <h3
+                            class="text-2xl font-heading font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Instagram Campaign</h3>
+                        <div
+                            class="mt-4 w-12 h-12 rounded-full bg-gold text-dark flex items-center justify-center transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden cursor-pointer"
+                    data-category="marketing">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Brand Growth"
+                        class="w-full h-80 object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center backdrop-blur-sm">
+                        <span
+                            class="text-gold text-sm font-bold tracking-wider mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Marketing</span>
+                        <h3
+                            class="text-2xl font-heading font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Brand Growth</h3>
+                        <div
+                            class="mt-4 w-12 h-12 rounded-full bg-gold text-dark flex items-center justify-center transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden cursor-pointer"
+                    data-category="video">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Event Coverage"
+                        class="w-full h-80 object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center backdrop-blur-sm">
+                        <span
+                            class="text-gold text-sm font-bold tracking-wider mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Video</span>
+                        <h3
+                            class="text-2xl font-heading font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Event Coverage</h3>
+                        <div
+                            class="mt-4 w-12 h-12 rounded-full bg-gold text-dark flex items-center justify-center transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden cursor-pointer"
+                    data-category="design">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Advertising Campaign"
+                        class="w-full h-80 object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center backdrop-blur-sm">
+                        <span
+                            class="text-gold text-sm font-bold tracking-wider mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Design</span>
+                        <h3
+                            class="text-2xl font-heading font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Advertising Campaign</h3>
+                        <div
+                            class="mt-4 w-12 h-12 rounded-full bg-gold text-dark flex items-center justify-center transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 7 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden cursor-pointer"
+                    data-category="marketing">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Growth Strategy"
+                        class="w-full h-80 object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center backdrop-blur-sm">
+                        <span
+                            class="text-gold text-sm font-bold tracking-wider mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Marketing</span>
+                        <h3
+                            class="text-2xl font-heading font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Growth Strategy</h3>
+                        <div
+                            class="mt-4 w-12 h-12 rounded-full bg-gold text-dark flex items-center justify-center transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 8 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden cursor-pointer"
+                    data-category="video">
+                    <img src="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Music Video Edit"
+                        class="w-full h-80 object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center backdrop-blur-sm">
+                        <span
+                            class="text-gold text-sm font-bold tracking-wider mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Video</span>
+                        <h3
+                            class="text-2xl font-heading font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            Music Video Edit</h3>
+                        <div
+                            class="mt-4 w-12 h-12 rounded-full bg-gold text-dark flex items-center justify-center transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 9 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden cursor-pointer"
+                    data-category="marketing">
+                    <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="SEO & Conversion"
+                        class="w-full h-80 object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center backdrop-blur-sm">
+                        <span
+                            class="text-gold text-sm font-bold tracking-wider mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Marketing</span>
+                        <h3
+                            class="text-2xl font-heading font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                            SEO & Conversion</h3>
+                        <div
+                            class="mt-4 w-12 h-12 rounded-full bg-gold text-dark flex items-center justify-center transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center mb-16 section-heading">
+                <span class="text-gold font-medium tracking-widest uppercase text-sm">Fikradaha</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-2">Maxay Yiraahdeen Macamiishu?</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto testimonial-slider-container">
+                <div class="testimonial-slider flex overflow-x-hidden snap-x snap-mandatory">
+
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide min-w-full snap-center p-4">
+                        <div
+                            class="bg-surface border border-surfaceLighter rounded-2xl p-8 md:p-12 text-center relative hover:border-gold/30 transition-colors duration-300 hover:shadow-neon-hover">
+                            <i class="fas fa-quote-left text-4xl text-gold/20 absolute top-8 left-8"></i>
+                            <p class="text-xl text-gray-300 italic mb-8 relative z-10 leading-relaxed">
+                                "Hibo hal-abuur oo cajiib ah iyo shaqo xirfadnimo sareysa leh. Waxay na siiyeen naqshado iyo tafatir tayo sare leh oo si buuxda u waafaqay aragtida astaantayada."
+                            </p>
+                            <div class="flex flex-col items-center">
+                                <div class="w-16 h-16 rounded-full bg-surfaceLighter border-2 border-gold flex items-center justify-center mb-4 shadow-neon">
+                                    <span class="text-gold font-heading font-bold text-2xl">S</span>
+                                </div>
+                                <h4 class="text-white font-bold font-heading">Sahra Jaamac</h4>
+                                <span class="text-gold text-sm">Agaasimaha Hal-abuurka</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide min-w-full snap-center p-4">
+                        <div
+                            class="bg-surface border border-surfaceLighter rounded-2xl p-8 md:p-12 text-center relative hover:border-gold/30 transition-colors duration-300 hover:shadow-neon-hover">
+                            <i class="fas fa-quote-left text-4xl text-gold/20 absolute top-8 left-8"></i>
+                            <p class="text-xl text-gray-300 italic mb-8 relative z-10 leading-relaxed">
+                                "Tafatire iyo naqshadeeye aad u hibo badan oo wata fikrado hal-abuur oo casri ah. Wuxuu nolosha dib ugu soo celiyay kanaalkayaga YouTube-ka isagoo adeegsanaya tafatir shineemo oo cajiib ah."
+                            </p>
+                            <div class="flex flex-col items-center">
+                                <div class="w-16 h-16 rounded-full bg-surfaceLighter border-2 border-gold flex items-center justify-center mb-4 shadow-neon">
+                                    <span class="text-gold font-heading font-bold text-2xl">M</span>
+                                </div>
+                                <h4 class="text-white font-bold font-heading">Maxamed Cumar</h4>
+                                <span class="text-gold text-sm">Sameeyaha Muuqaalada (Content Creator)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide min-w-full snap-center p-4">
+                        <div
+                            class="bg-surface border border-surfaceLighter rounded-2xl p-8 md:p-12 text-center relative hover:border-gold/30 transition-colors duration-300 hover:shadow-neon-hover">
+                            <i class="fas fa-quote-left text-4xl text-gold/20 absolute top-8 left-8"></i>
+                            <p class="text-xl text-gray-300 italic mb-8 relative z-10 leading-relaxed">
+                                "Aad iyo aad ayaa loogu taliyaa mashaariicda suuq-geynta dhijitaalka ah iyo dhisidda astaanta. Waa xirfadle dhab ah oo si sax ah u fahmaya waxa uu suuqu rabo."
+                            </p>
+                            <div class="flex flex-col items-center">
+                                <div class="w-16 h-16 rounded-full bg-surfaceLighter border-2 border-gold flex items-center justify-center mb-4 shadow-neon">
+                                    <span class="text-gold font-heading font-bold text-2xl">E</span>
+                                </div>
+                                <h4 class="text-white font-bold font-heading">Ebyan Warsame</h4>
+                                <span class="text-gold text-sm">Maareeyaha Suuq-geynta</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controls -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="slider-dot w-3 h-3 rounded-full bg-gold transition-all duration-300"
+                        data-index="0"></button>
+                    <button
+                        class="slider-dot w-3 h-3 rounded-full bg-surfaceLighter hover:bg-gold/50 transition-all duration-300"
+                        data-index="1"></button>
+                    <button
+                        class="slider-dot w-3 h-3 rounded-full bg-surfaceLighter hover:bg-gold/50 transition-all duration-300"
+                        data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-surface relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 section-heading">
+                <span class="text-gold font-medium tracking-widest uppercase text-sm">Get in Touch</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-2">Contact Me</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                <!-- Contact Info -->
+                <div class="lg:col-span-2 space-y-8 contact-info">
+                    <h3 class="text-2xl font-heading font-bold text-white mb-6">Let's Talk About Your Next Project</h3>
+                    <p class="text-gray-400 mb-8">Feel free to reach out for collaborations, freelance work, or just to
+                        say hi. I'm always open to discussing new projects.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start group">
+                            <div
+                                class="w-12 h-12 rounded-full bg-dark border border-surfaceLighter flex items-center justify-center text-gold text-xl group-hover:bg-gold group-hover:text-dark transition-all duration-300 mr-4 shrink-0 shadow-neon-hover">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-1">Email</h4>
+                                <a href="mailto:abdiwahabsalisaid@gmail.com"
+                                    class="text-gray-400 hover:text-gold transition-colors">abdiwahabsalisaid@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start group">
+                            <div
+                                class="w-12 h-12 rounded-full bg-dark border border-surfaceLighter flex items-center justify-center text-gold text-xl group-hover:bg-gold group-hover:text-dark transition-all duration-300 mr-4 shrink-0 shadow-neon-hover">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-1">Phone</h4>
+                                <a href="tel:618455022"
+                                    class="text-gray-400 hover:text-gold transition-colors">618455022</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8">
+                        <h4 class="text-white font-bold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/barwaani_2" target="_blank"
+                                class="w-10 h-10 rounded-full bg-dark border border-surfaceLighter flex items-center justify-center text-gray-400 hover:text-dark hover:bg-gold hover:border-gold transition-all duration-300 transform hover:-translate-y-1">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/18mA49bjRs/" target="_blank"
+                                class="w-10 h-10 rounded-full bg-dark border border-surfaceLighter flex items-center justify-center text-gray-400 hover:text-dark hover:bg-gold hover:border-gold transition-all duration-300 transform hover:-translate-y-1">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.snapchat.com/add/barwaani2" target="_blank"
+                                class="w-10 h-10 rounded-full bg-dark border border-surfaceLighter flex items-center justify-center text-gray-400 hover:text-dark hover:bg-gold hover:border-gold transition-all duration-300 transform hover:-translate-y-1">
+                                <i class="fab fa-snapchat-ghost"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-3 contact-form">
+                    <form
+                        class="bg-dark p-8 rounded-2xl border border-surfaceLighter space-y-6 shadow-2xl relative overflow-hidden group">
+                        <!-- Decorative glow -->
+                        <div
+                            class="absolute -top-20 -right-20 w-40 h-40 bg-gold/10 rounded-full blur-3xl pointer-events-none">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="form-group relative">
+                                <input type="text" id="name"
+                                    class="w-full bg-surface border border-surfaceLighter rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors peer placeholder-transparent"
+                                    placeholder="Name" required>
+                                <label for="name"
+                                    class="absolute left-4 top-3 text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-gold peer-focus:bg-dark px-1">Your
+                                    Name</label>
+                            </div>
+                            <div class="form-group relative">
+                                <input type="email" id="email"
+                                    class="w-full bg-surface border border-surfaceLighter rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors peer placeholder-transparent"
+                                    placeholder="Email" required>
+                                <label for="email"
+                                    class="absolute left-4 top-3 text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-gold peer-focus:bg-dark px-1">Your
+                                    Email</label>
+                            </div>
+                        </div>
+                        <div class="form-group relative">
+                            <input type="text" id="subject"
+                                class="w-full bg-surface border border-surfaceLighter rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors peer placeholder-transparent"
+                                placeholder="Subject" required>
+                            <label for="subject"
+                                class="absolute left-4 top-3 text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-gold peer-focus:bg-dark px-1">Subject</label>
+                        </div>
+                        <div class="form-group relative">
+                            <textarea id="message" rows="5"
+                                class="w-full bg-surface border border-surfaceLighter rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors peer placeholder-transparent resize-none"
+                                placeholder="Message" required></textarea>
+                            <label for="message"
+                                class="absolute left-4 top-3 text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-gold peer-focus:bg-dark px-1">Your
+                                Message</label>
+                        </div>
+                        <button type="submit" class="btn-primary w-full justify-center shadow-neon">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-8 border-t border-surfaceLighter">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                &copy; <span id="year">2026</span> <span class="text-gold">Abdiwahab Salim</span>. All Rights
+                Reserved.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#home" class="text-gray-500 hover:text-gold text-sm transition-colors">Home</a>
+                <a href="#portfolio" class="text-gray-500 hover:text-gold text-sm transition-colors">Portfolio</a>
+                <a href="#contact" class="text-gray-500 hover:text-gold text-sm transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top"
+        class="fixed bottom-8 left-8 w-12 h-12 bg-gold text-dark rounded-full flex items-center justify-center opacity-0 pointer-events-none transform translate-y-4 transition-all duration-300 z-40 shadow-neon hover:bg-white">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox"
+        class="fixed inset-0 z-[110] bg-dark/95 backdrop-blur-xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500">
+        <button id="lightbox-close"
+            class="absolute top-8 right-8 text-white hover:text-gold text-4xl transition-colors focus:outline-none z-10">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="relative max-w-5xl w-full px-6 flex flex-col items-center transform scale-95 transition-transform duration-500"
+            id="lightbox-content">
+            <img id="lightbox-img" src="" alt="Portfolio Image"
+                class="w-full h-auto max-h-[80vh] object-contain rounded-xl shadow-2xl border border-surfaceLighter">
+            <div class="mt-6 text-center">
+                <span id="lightbox-category"
+                    class="text-gold text-sm font-bold tracking-wider mb-2 block uppercase">Category</span>
+                <h3 id="lightbox-title" class="text-3xl font-heading font-bold text-white">Project Title</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
