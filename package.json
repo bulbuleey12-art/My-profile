@@ -1,0 +1,12 @@
+{
+  "name": "abdiwahab-portfolio",
+  "version": "1.0.0",
+  "description": "Professional Portfolio of Abdiwahab Salim",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
